@@ -5,10 +5,10 @@
   "homepage": "http://uriyyo.github.io/",
   "dependencies": {
     "gh-pages": "^2.2.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-keyboard-event-handler": "^1.5.1",
-    "react-scripts": "3.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-keyboard-event-handler": "^1.5.4",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
