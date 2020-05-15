@@ -33,8 +33,10 @@ class TerminalBody extends React.Component {
                 </Record>,
 
                 <Record command="echo $EXPERIENCE">
-                    <Text>2017 - present GlobalLogic</Text>
-                    <Text>               Middle Python/Java Software Engineer</Text>
+                    <Text>2017 Jan - 2020 Mar GlobalLogic</Text>
+                    <Text>                    Python/Java Software Engineer</Text>
+                    <Text>2020 Apr - present Newfire Partners</Text>
+                    <Text>                   Python Software Engineer</Text>
                 </Record>,
 
                 <Record command="ls contacts">
