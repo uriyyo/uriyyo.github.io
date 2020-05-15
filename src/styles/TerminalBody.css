@@ -1,0 +1,59 @@
+.TerminalBody {
+    background: rgba(56, 4, 40, .9);
+    height: calc(100% - 25px);
+    margin-top: -1px;
+    padding-top: 2px;
+    font-family: 'Ubuntu mono', serif;
+    overflow: scroll;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.TerminalBodyUser {
+    color: #87d441;
+}
+
+.TerminalLocation {
+    color: #6d85a9;
+}
+
+.TerminalDollar {
+    color: #ddd;
+}
+
+.TerminalPromptCursor {
+    width: 8px;
+    background: white;
+    display: block;
+    animation: 2000ms ease infinite alternate blink;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.TerminalBodyText {
+    white-space: pre-wrap;
+    color: #ddd;
+}
+
+.TerminalBodyText a:link, .TerminalBodyText a:visited, .TerminalBodyText a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.TerminalCommand {
+    margin-left: 8px;
+    color: #ddd;
+    white-space: pre;
+}
+
+.TerminalPrompt {
+    margin-top: 5px;
+    display: flex;
+}

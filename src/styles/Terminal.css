@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+    background: linear-gradient(45deg, #57003f 0%, #f57453 100%);
+    font-family: 'Ubuntu';
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Terminal {
+    margin: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, .5);
+}
