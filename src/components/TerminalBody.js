@@ -41,8 +41,8 @@ class TerminalBody extends React.Component {
 
                 <Record command="ls contacts">
                     <Link href='https://github.com/uriyyo' text='@github'/>
-                    <Link href='https://www.linkedin.com/in/yurii-karabas-b35653140/' text='@linkedin'/>
-                    <Link href='https://t.me/yurii_karabas' text='@telegram'/>
+                    <Link href='https://www.linkedin.com/in/uriyyo/' text='@linkedin'/>
+                    <Link href='https://t.me/uriyyo' text='@telegram'/>
                     <Link href='https://www.codewars.com/users/yurii_karabas' text='@codewars'/>
                     <Link href='mailto:1998uriyyo@gmail.com' text='@email'/>
                 </Record>,
