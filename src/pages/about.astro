@@ -1,0 +1,9 @@
+---
+import ProfileCard from '../components/ProfileCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<Layout title={`about | ${SITE_TITLE}`} description={`${SITE_TITLE}, Python software engineer`}>
+	<ProfileCard />
+</Layout>

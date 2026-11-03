@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Brutalist palette: paper, ink, one highlighter */
+:root {
+	--canvas: #f2f2ef;
+	--panel: #ffffff;
+	--ink: #000000;
+	--ink-muted: #555550;
+	--line: #000000;
+	--highlight: #ffe600;
+	--highlight-ink: #000000;
+}
+.dark {
+	--canvas: #161616;
+	--panel: #1f1f1f;
+	--ink: #edede8;
+	--ink-muted: #9a9a94;
+	--line: #4a4a46;
+	--highlight: #ffe600;
+	--highlight-ink: #000000;
+}
+
+@theme inline {
+	--color-canvas: var(--canvas);
+	--color-panel: var(--panel);
+	--color-ink: var(--ink);
+	--color-ink-muted: var(--ink-muted);
+	--color-line: var(--line);
+	--color-highlight: var(--highlight);
+	--color-highlight-ink: var(--highlight-ink);
+	--font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+	--font-sans: var(--font-archivo), 'Arial Black', system-ui, sans-serif;
+	--shadow-hard: 6px 6px 0 0 var(--line);
+	--shadow-hard-sm: 4px 4px 0 0 var(--line);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-canvas font-mono text-ink antialiased;
+}
+
+/* Logo tile: lowercase u on a yellow tile with a hard shadow */
+.mark-tile {
+	@apply inline-flex size-7 items-center justify-center rounded-[4px] border-[3px] border-black bg-highlight font-mono text-[23px] font-bold normal-case leading-none text-black;
+	box-shadow: 4px 4px 0 0 var(--line);
+}
+
+/* Highlighter mark */
+.mark {
+	@apply bg-highlight px-1.5 text-highlight-ink;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+/* Markdown prose */
+.markdown {
+	@apply prose max-w-none text-ink prose-headings:font-sans prose-headings:font-extrabold prose-headings:uppercase prose-headings:tracking-tight prose-headings:text-ink prose-p:text-ink prose-a:font-bold prose-a:text-ink prose-a:underline prose-a:decoration-[3px] prose-a:underline-offset-4 hover:prose-a:bg-highlight hover:prose-a:text-highlight-ink prose-strong:text-ink prose-li:text-ink prose-blockquote:border-l-[6px] prose-blockquote:border-line prose-blockquote:font-normal prose-blockquote:not-italic prose-blockquote:text-ink-muted prose-hr:border-t-[3px] prose-hr:border-line prose-th:text-ink prose-code:font-mono;
+}
+.markdown h2 {
+	@apply border-b-[3px] border-line pb-2;
+}
+.markdown :where(code):not(pre code) {
+	@apply bg-highlight px-1.5 py-0.5 text-[0.875em] font-normal text-highlight-ink before:content-none after:content-none;
+}
+.markdown pre {
+	@apply rounded-none border-[3px] border-line font-mono text-sm shadow-hard-sm;
+}
+.markdown img {
+	@apply border-[3px] border-line shadow-hard;
+}
+
+/* Shiki dual themes (defaultColor: false): pick light/dark vars by the .dark class */
+.astro-code,
+.astro-code span {
+	color: var(--shiki-light) !important;
+	background-color: var(--shiki-light-bg) !important;
+}
+.dark .astro-code,
+.dark .astro-code span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+}

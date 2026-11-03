@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '../assets/avatar.jpg';
+import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
+
+interface Props {
+	tagline?: string;
+}
+const { tagline } = Astro.props;
+---
+
+<div class="border-[3px] border-line bg-panel shadow-hard">
+	<div class="flex flex-col items-center gap-5 px-5 py-6 text-center sm:flex-row sm:items-center sm:text-left">
+		<Image
+			src={avatar}
+			width={256}
+			height={256}
+			alt={SITE_TITLE}
+			class="size-28 shrink-0 border-[3px] border-line object-cover"
+		/>
+		<div class="flex min-w-0 flex-1 flex-col items-center gap-2 sm:items-start">
+			<h1 class="font-sans text-3xl font-extrabold uppercase leading-none tracking-tight">{SITE_TITLE}</h1>
+			<p class="mark text-sm font-bold">Python software engineer</p>
+			{tagline && <p class="text-sm">{tagline}</p>}
+			<ul class="mt-2 flex flex-wrap justify-center gap-2 sm:justify-start">
+				{SOCIAL_LINKS.map((link) => (
+					<li>
+						<a
+							href={link.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block border-[3px] border-line bg-panel px-2.5 py-0.5 font-mono text-xs font-bold uppercase text-ink hover:bg-highlight hover:text-highlight-ink"
+						>
+							{link.name}
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</div>

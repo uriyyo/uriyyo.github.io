@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import PostList from '../components/PostList.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import Layout from '../layouts/Layout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<ProfileCard
+		tagline="Notes on Python, backend development, open source and whatever else I find interesting along the way."
+	/>
+
+	<section class="mt-12">
+		<div class="mb-4 flex items-baseline justify-between">
+			<h2 class="font-sans text-xl font-extrabold uppercase tracking-tight">Latest posts</h2>
+			<a href="/blog" class="font-mono text-xs font-bold underline decoration-[3px] underline-offset-4 hover:bg-highlight hover:text-highlight-ink">./blog &rarr;</a>
+		</div>
+		<PostList posts={posts} />
+	</section>
+</Layout>
